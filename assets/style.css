@@ -554,6 +554,218 @@ footer a:hover {
   }
 }
 
+/* Downloads page */
+.top nav a[aria-current='page'] {
+  background: rgba(253, 250, 243, 0.14);
+}
+.download-card p a {
+  color: var(--brown);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.page-hero {
+  background: var(--brown);
+  color: var(--card);
+  padding: 36px 0 84px;
+  border-bottom-left-radius: 50% 48px;
+  border-bottom-right-radius: 50% 48px;
+}
+.page-hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.page-hero p {
+  margin: 0;
+  color: #efe6d6;
+  font-size: 18px;
+  max-width: 36em;
+}
+.downloads > .wrap {
+  margin-top: -52px;
+  padding-bottom: 72px;
+}
+.badge {
+  display: inline-block;
+  vertical-align: middle;
+  background: var(--gold);
+  color: var(--brown);
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.latest {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 20px 44px rgba(44, 26, 14, 0.14);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.latest-main {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.latest-logo {
+  width: 72px;
+  height: 72px;
+}
+.latest-logo::before {
+  background: var(--cream);
+}
+.latest-label {
+  margin: 0;
+  font-weight: 800;
+  color: var(--muted);
+}
+.latest-version {
+  margin: 2px 0 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: var(--brown);
+  line-height: 1.15;
+}
+.latest-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  margin: 0;
+  font-size: 15px;
+}
+.latest-meta dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.latest-meta dd {
+  margin: 0;
+  font-weight: 700;
+}
+.latest .btn-light {
+  background: var(--brown);
+  color: var(--card);
+}
+.latest .btn-light:hover {
+  background: var(--brown-2);
+}
+.install {
+  margin-top: 36px;
+  background: var(--cream);
+  border-radius: 28px;
+  padding: 28px;
+}
+.install h2,
+.release-notes > h2 {
+  font-size: clamp(26px, 4vw, 34px);
+}
+.install ol {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 6px;
+}
+.install-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  text-align: justify;
+}
+.release-notes {
+  padding: 56px 0 0;
+}
+.release {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(22px, 4vw, 36px);
+  margin-top: 20px;
+}
+.release-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.release-head h2 {
+  font-size: 26px;
+  margin: 0;
+}
+.release-date {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.btn-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--brown);
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+}
+.btn-small svg {
+  width: 18px;
+  height: 18px;
+}
+.btn-small:hover {
+  background: var(--cream);
+}
+.release-intro {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+.release h3 {
+  margin: 22px 0 6px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--brown);
+}
+.release ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 4px;
+  color: #3a2c20;
+}
+@media (max-width: 760px) {
+  .latest {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px;
+  }
+  .latest .cta {
+    flex-direction: column;
+  }
+  .latest .btn {
+    justify-content: center;
+  }
+  .install {
+    padding: 22px;
+  }
+}
+
 /* Legal pages */
 .legal {
   padding: 48px 0 72px;
@@ -683,8 +895,27 @@ footer a:hover {
   .download-card .cta {
     justify-content: center;
   }
-  .top nav > a {
+  .top nav > a:not(.nav-dl) {
     display: none;
+  }
+  .top nav {
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  .top nav .nav-dl {
+    padding: 8px 10px;
+  }
+  .lang-switch {
+    margin-left: 2px;
+  }
+  .top nav .lang-switch a,
+  .lang-on {
+    min-width: 36px;
+    padding: 6px 8px;
+  }
+  .brand {
+    font-size: 19px;
+    gap: 8px;
   }
 }
 
