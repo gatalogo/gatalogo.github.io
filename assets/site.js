@@ -1,10 +1,14 @@
-// Reveals elements as they scroll into view and drives the screenshot carousel arrows.
+// Reveals elements as they scroll into view, plays the promo video only while it is on screen,
+// and drives the screenshot carousel arrows.
 ;(function () {
+  clearTimeout(window.__revealFallback)
+  var root = document.documentElement
   var items = document.querySelectorAll('.reveal')
+  var video = document.querySelector('.video-frame video')
+
   if (!('IntersectionObserver' in window)) {
-    items.forEach(function (el) {
-      el.classList.add('in')
-    })
+    root.classList.add('reveal-all')
+    if (video) video.setAttribute('autoplay', '')
   } else {
     var observer = new IntersectionObserver(
       function (entries) {
@@ -19,6 +23,32 @@
     items.forEach(function (el) {
       observer.observe(el)
     })
+
+    if (video) {
+      // Downloads and plays only when visible, so the page loads fast on mobile data.
+      var userPaused = false
+      video.addEventListener('pause', function () {
+        if (!video.dataset.auto) userPaused = true
+        delete video.dataset.auto
+      })
+      video.addEventListener('play', function () {
+        userPaused = false
+      })
+      new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && !userPaused) {
+              var playing = video.play()
+              if (playing && playing.catch) playing.catch(function () {})
+            } else if (!entry.isIntersecting && !video.paused) {
+              video.dataset.auto = '1'
+              video.pause()
+            }
+          })
+        },
+        { threshold: 0.35 },
+      ).observe(video)
+    }
   }
 
   var track = document.querySelector('.phones')
