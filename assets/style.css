@@ -509,22 +509,13 @@ h2 {
 footer {
   background: var(--brown);
   color: #d8ccb8;
-  padding: 56px 0 28px;
+  padding: 44px 0 24px;
   font-size: 15px;
 }
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
-  gap: 32px 40px;
-}
-.footer-brand .brand {
-  color: var(--card);
-}
-.footer-brand p {
-  margin: 14px 0 0;
-  max-width: 30em;
-  text-align: justify;
-  hyphens: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 72px;
 }
 .footer-col {
   display: flex;
@@ -552,7 +543,7 @@ footer a:hover {
   text-decoration: underline;
 }
 .footer-copy {
-  margin: 40px 0 0;
+  margin: 28px 0 0;
   padding-top: 12px;
   border-top: 1px solid rgba(253, 250, 243, 0.14);
   font-size: 14px;
@@ -566,29 +557,6 @@ footer a:hover {
   color: var(--card);
   font-weight: 800;
 }
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-}
-@media (max-width: 480px) {
-  footer {
-    padding-top: 44px;
-  }
-  .footer-grid {
-    gap: 24px 16px;
-  }
-  .footer-col:last-child {
-    grid-column: 1 / -1;
-  }
-  .footer-copy {
-    margin-top: 28px;
-  }
-}
-
 /* Downloads page */
 .top nav a[aria-current='page'] {
   background: rgba(253, 250, 243, 0.14);
