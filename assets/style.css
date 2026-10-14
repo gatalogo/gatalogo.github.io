@@ -967,15 +967,13 @@ footer a:hover {
   .download-card .cta {
     justify-content: center;
   }
-  .top nav > a:not(.nav-dl) {
+  /* Phones show only the language switch; downloads stay reachable from the hero and footer */
+  .top nav > a {
     display: none;
   }
   .top nav {
     flex-wrap: nowrap;
     gap: 2px;
-  }
-  .top nav .nav-dl {
-    padding: 8px 10px;
   }
   .lang-switch {
     margin-left: 2px;
