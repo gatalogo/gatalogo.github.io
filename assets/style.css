@@ -82,6 +82,9 @@ a {
   gap: 12px;
   min-height: 68px;
 }
+.top nav {
+  margin-left: auto;
+}
 .brand {
   display: flex;
   align-items: center;
