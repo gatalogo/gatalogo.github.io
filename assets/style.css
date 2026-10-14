@@ -994,12 +994,48 @@ footer a:hover {
   background: var(--cream);
 }
 @media (max-width: 760px) {
+  /* Keep the phone beside the copy: title on top, text left, video right */
   .video-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) clamp(120px, 38vw, 220px);
+    grid-template-areas:
+      'pill pill'
+      'title title'
+      'copy frame';
+    column-gap: 16px;
+    row-gap: 0;
+  }
+  .video-text {
+    display: contents;
+  }
+  .video .pill {
+    grid-area: pill;
+    justify-self: start;
+  }
+  .video h2 {
+    grid-area: title;
+    margin-bottom: 20px;
+  }
+  .video-copy {
+    grid-area: copy;
+  }
+  .video .section-lead,
+  .video .note {
+    text-align: left;
+    hyphens: manual;
+  }
+  .video .section-lead {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  .video .note {
+    font-size: 13px;
   }
   .video-frame {
-    width: min(320px, 86%);
-    margin-inline: auto;
+    grid-area: frame;
+    border-radius: 22px;
+    padding: 6px;
+  }
+  .video-frame video {
+    border-radius: 17px;
   }
 }
