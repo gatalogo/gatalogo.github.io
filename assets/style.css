@@ -474,6 +474,63 @@ h2 {
   height: 42px;
 }
 
+/* FAQ */
+.faq {
+  padding-top: 0;
+}
+.faq-list {
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 24px;
+}
+.faq details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 12px 20px;
+  font-weight: 800;
+  color: var(--brown);
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: '+';
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cream);
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq summary:focus-visible {
+  outline: 2px solid var(--brown);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+.faq details p {
+  margin: 0;
+  padding: 0 20px 18px;
+  color: var(--muted);
+}
+
 /* Download */
 .download {
   padding-top: 0;
