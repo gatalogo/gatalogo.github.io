@@ -557,9 +557,17 @@ footer a:hover {
   }
 }
 @media (max-width: 480px) {
+  footer {
+    padding-top: 44px;
+  }
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px 16px;
+  }
+  .footer-col:last-child {
+    grid-column: 1 / -1;
+  }
+  .footer-copy {
+    margin-top: 28px;
   }
 }
 
@@ -863,7 +871,7 @@ footer a:hover {
   }
   .hero .mascot {
     order: -1;
-    width: 220px;
+    width: 170px;
   }
   .hero h1,
   .hero .tagline {
@@ -996,7 +1004,7 @@ footer a:hover {
 @media (max-width: 760px) {
   /* Keep the phone beside the copy: title on top, text left, video right */
   .video-grid {
-    grid-template-columns: minmax(0, 1fr) clamp(120px, 38vw, 220px);
+    grid-template-columns: minmax(0, 1fr) clamp(112px, 33vw, 200px);
     grid-template-areas:
       'pill pill'
       'title title'
@@ -1018,14 +1026,10 @@ footer a:hover {
   .video-copy {
     grid-area: copy;
   }
-  .video .section-lead,
-  .video .note {
-    text-align: left;
-    hyphens: manual;
-  }
   .video .section-lead {
-    font-size: 15px;
+    font-size: 14.5px;
     margin-bottom: 0;
+    word-spacing: -0.02em;
   }
   .video .note {
     font-size: 13px;
@@ -1037,5 +1041,61 @@ footer a:hover {
   }
   .video-frame video {
     border-radius: 17px;
+  }
+}
+
+/* Mobile: tighter rhythm and compact feature cards */
+@media (max-width: 760px) {
+  section {
+    padding: 44px 0;
+  }
+  h2 {
+    font-size: clamp(26px, 7.4vw, 34px);
+  }
+  .section-lead {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 560px) {
+  .features {
+    gap: 10px;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    padding: 14px 16px;
+  }
+  .feature .icon {
+    grid-row: span 2;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+  }
+  .feature .icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .feature h3 {
+    font-size: 17px;
+    margin: 1px 0 2px;
+  }
+  .feature p {
+    font-size: 14.5px;
+    line-height: 1.45;
+  }
+}
+@media (max-width: 560px) {
+  .legal {
+    padding: 24px 0 48px;
+  }
+  .legal article {
+    padding: 22px 18px;
+  }
+  .legal article ul,
+  .legal article ol {
+    padding-left: 22px;
   }
 }
