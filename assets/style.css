@@ -1155,3 +1155,56 @@ footer a:hover {
     padding-left: 22px;
   }
 }
+/* Mobile: privacy band and download card as compact cards */
+@media (max-width: 560px) {
+  .privacy {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding: 22px 20px;
+    border-radius: var(--radius);
+    text-align: left;
+  }
+  .privacy .icon {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+  }
+  .privacy .icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .privacy > div:last-child {
+    display: contents;
+  }
+  .privacy h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .privacy p {
+    grid-column: 1 / -1;
+    font-size: 15px;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .download-card {
+    align-items: stretch;
+    gap: 16px;
+    padding: 22px 20px;
+    border-radius: var(--radius);
+  }
+  .download-card h2 {
+    font-size: 24px;
+  }
+  .download-card p {
+    font-size: 15px;
+  }
+  .download-card .cta {
+    display: grid;
+    justify-content: stretch;
+    gap: 10px;
+  }
+  .download-card .btn {
+    justify-content: center;
+    min-height: 48px;
+  }
+}
