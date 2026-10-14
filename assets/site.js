@@ -51,6 +51,28 @@
     }
   }
 
+  // Cycles the hero tagline through what the app can do, like the splash text in the app header.
+  var tagline = document.querySelector('.tagline-text')
+  var phrases = []
+  try {
+    phrases = JSON.parse((tagline && tagline.dataset.phrases) || '[]')
+  } catch (e) {}
+  if (tagline && phrases.length > 1) {
+    var phraseIndex = 0
+    setInterval(function () {
+      if (document.hidden) return
+      tagline.classList.add('is-out')
+      setTimeout(function () {
+        phraseIndex = (phraseIndex + 1) % phrases.length
+        tagline.textContent = phrases[phraseIndex]
+        tagline.classList.remove('is-out')
+        tagline.classList.add('is-in')
+        void tagline.offsetWidth
+        tagline.classList.remove('is-in')
+      }, 350)
+    }, 3200)
+  }
+
   var track = document.querySelector('.phones')
   var buttons = document.querySelectorAll('.nav-btn')
   if (!track || !buttons.length) return

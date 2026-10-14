@@ -192,6 +192,24 @@ a {
   font-weight: 700;
   font-size: 19px;
   margin: 0 0 16px;
+  min-height: 1.6em;
+  overflow: hidden;
+}
+/* Rotating tagline: the old phrase slides up and out, the next one rises in from below */
+.tagline-text {
+  display: inline-block;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.35s ease;
+}
+.tagline-text.is-out {
+  transform: translateY(-110%);
+  opacity: 0;
+}
+.tagline-text.is-in {
+  transform: translateY(110%);
+  opacity: 0;
+  transition: none;
 }
 .hero .lead {
   text-align: justify;
@@ -969,6 +987,10 @@ footer a:hover {
   }
   .hero .mascot img {
     animation: none;
+  }
+  .tagline-text,
+  .tagline-text.is-out {
+    transform: none;
   }
 }
 
