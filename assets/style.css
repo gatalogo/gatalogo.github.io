@@ -760,26 +760,32 @@ footer a:hover {
   display: block;
   width: 100%;
   max-width: 640px;
-  height: 1520px;
+  height: 1230px;
   margin: 16px auto 0;
   border: 0;
   border-radius: var(--radius);
   background: var(--card);
 }
-/* The form grows taller as it narrows; these heights fit it without a nested scroll. */
-@media (max-width: 632px) {
+/* The form grows taller as it narrows; these heights fit its content (measured per width)
+   without a nested scroll or a long empty tail. */
+@media (max-width: 591px) {
+  .tester-form iframe {
+    height: 1330px;
+  }
+}
+@media (max-width: 531px) {
+  .tester-form iframe {
+    height: 1450px;
+  }
+}
+@media (max-width: 389px) {
+  .tester-form iframe {
+    height: 1580px;
+  }
+}
+@media (max-width: 351px) {
   .tester-form iframe {
     height: 1780px;
-  }
-}
-@media (max-width: 432px) {
-  .tester-form iframe {
-    height: 1980px;
-  }
-}
-@media (max-width: 374px) {
-  .tester-form iframe {
-    height: 2120px;
   }
 }
 .release-notes {
