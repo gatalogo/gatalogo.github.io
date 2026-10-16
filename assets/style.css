@@ -749,10 +749,38 @@ footer a:hover {
   display: grid;
   gap: 6px;
 }
-.install-note {
-  margin: 16px 0 0;
-  color: var(--muted);
-  text-align: justify;
+.tester-form {
+  margin-top: 36px;
+  scroll-margin-top: 24px;
+}
+.tester-form h2 {
+  font-size: clamp(26px, 4vw, 34px);
+}
+.tester-form iframe {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: 1520px;
+  margin: 16px auto 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--card);
+}
+/* The form grows taller as it narrows; these heights fit it without a nested scroll. */
+@media (max-width: 632px) {
+  .tester-form iframe {
+    height: 1780px;
+  }
+}
+@media (max-width: 432px) {
+  .tester-form iframe {
+    height: 1980px;
+  }
+}
+@media (max-width: 374px) {
+  .tester-form iframe {
+    height: 2120px;
+  }
 }
 .release-notes {
   padding: 56px 0 0;
