@@ -743,6 +743,13 @@ footer a:hover {
 .release-notes > h2 {
   font-size: clamp(26px, 4vw, 34px);
 }
+/* On the test page the steps are the first card, overlapping the hero like the latest release card */
+.install.test-steps {
+  margin-top: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 44px rgba(44, 26, 14, 0.14);
+}
 .install ol {
   margin: 0;
   padding-left: 22px;
